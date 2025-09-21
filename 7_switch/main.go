@@ -1,34 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // for -> only loop construct in golang
-func main() {
-	age := 20
-	if age > 18 {
-		fmt.Println("you can vote")
-	} else {
-		fmt.Println("you can't vote")
+func main(){
+	//simple switch
+	i:=5
+	switch i {
+	case 1:
+		fmt.Println("one")
+	case 2:
+		fmt.Println("two")
+	case 3:
+		fmt.Println("three")
+	default:
+		fmt.Println("default")
 	}
 
-	if age>=18{
-		fmt.Println("you can vote")
-	}else if age>=12{
-		fmt.Println("person is a teenager")
-	}
 
-	var role = "admin"
-	var hasPermissions = true
-	if role == "admin" && hasPermissions {
-		fmt.Println("hello admin")
+	//multiple condition switch
+	switch time.Now().Weekday() {
+	case time.Saturday, time.Sunday: 
+		fmt.Println("it's weekend")
+	default: 
+		fmt.Println("it's a weekday")
 	}
-
-	if age:=15; age>=18{
-		fmt.Println("user is adult", age)
-	}else if age>=12{
-		fmt.Println("user is teenager", age)
-	}else{
-		fmt.Println("user is child", age)
-	}
-	// go deosn't have ternary operator
 }
