@@ -28,4 +28,23 @@ func main(){
 	default: 
 		fmt.Println("it's a weekday")
 	}
+
+
+	//type switch
+	whoAmI := func (i interface{})  {
+		switch t:=i.(type) {
+		case int:
+			fmt.Println("its a int")
+		case string:
+			fmt.Println("its a string")
+		case bool:
+			fmt.Println("its a boolean")
+		default:
+			fmt.Println("unknown type", t)
+		}
+	}
+	whoAmI("haanji")
+	whoAmI(52)
+	whoAmI(true)
+	whoAmI(55.286)
 }
